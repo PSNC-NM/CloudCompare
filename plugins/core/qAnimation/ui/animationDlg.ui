@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>610</width>
-    <height>450</height>
+    <width>925</width>
+    <height>674</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,6 +39,44 @@
            <string>Loop</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QCheckBox" name="interpolateCheckBox">
+            <property name="text">
+             <string>Interpolate</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="angleModeCheckBox">
+            <property name="text">
+             <string>Angle mode</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="parametrizeCheckBox">
+            <property name="text">
+             <string>Parametrize spline</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="parametrizeDoubleSpinBox">
+            <property name="decimals">
+             <number>3</number>
+            </property>
+            <property name="maximum">
+             <double>0.999000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>0.001000000000000</double>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -133,7 +171,91 @@
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer_2">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>85</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Render borders</string>
+         </property>
+         <widget class="QCheckBox" name="renderAllCheckBox">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>20</y>
+            <width>120</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Render all</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>40</y>
+            <width>31</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>From:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_7">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>31</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>To:</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="renderFromSpinBox">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>40</y>
+            <width>91</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>99999</number>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="renderToSpinBox">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>60</y>
+            <width>91</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>99999</number>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -141,6 +263,276 @@
           <size>
            <width>20</width>
            <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_10">
+     <property name="topMargin">
+      <number>11</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Relative position</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <property name="topMargin">
+        <number>5</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>X</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="xDoubleSpinBox">
+         <property name="minimumSize">
+          <size>
+           <width>115</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="decimals">
+          <number>5</number>
+         </property>
+         <property name="minimum">
+          <double>-9999.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>9999.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Y</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="yDoubleSpinBox">
+         <property name="minimumSize">
+          <size>
+           <width>115</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="decimals">
+          <number>5</number>
+         </property>
+         <property name="minimum">
+          <double>-9999.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>9999.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Z</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="zDoubleSpinBox">
+         <property name="minimumSize">
+          <size>
+           <width>115</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="decimals">
+          <number>5</number>
+         </property>
+         <property name="minimum">
+          <double>-9999.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>9999.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Relative rotation</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <property name="topMargin">
+        <number>10</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>X</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="xRotDoubleSpinBox">
+         <property name="minimumSize">
+          <size>
+           <width>115</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="decimals">
+          <number>5</number>
+         </property>
+         <property name="minimum">
+          <double>-9999.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>9999.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Y</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="yRotDoubleSpinBox">
+         <property name="minimumSize">
+          <size>
+           <width>115</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="decimals">
+          <number>5</number>
+         </property>
+         <property name="minimum">
+          <double>-9999.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>9999.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Z</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="zRotDoubleSpinBox">
+         <property name="minimumSize">
+          <size>
+           <width>115</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="decimals">
+          <number>5</number>
+         </property>
+         <property name="minimum">
+          <double>-9999.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>9999.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>0.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
           </size>
          </property>
         </spacer>
@@ -231,8 +623,10 @@
          <item>
           <widget class="QSpinBox" name="bitrateSpinBox">
            <property name="toolTip">
-            <string>Bitrate (in kbit/s)
-The higher the better the quality (but the bigger the file)</string>
+            <string>
+                          Bitrate (in kbit/s)
+                          The higher the better the quality (but the bigger the file)
+                        </string>
            </property>
            <property name="suffix">
             <string> kbps</string>
@@ -270,12 +664,14 @@ The higher the better the quality (but the bigger the file)</string>
          <item>
           <widget class="QComboBox" name="renderingModeComboBox">
            <property name="toolTip">
-            <string>- Super resolution: render the frame at a higher resolution (2, 3 or 4 times larger)
-and then shrink it back down to size (this makes some noisy pixels drop off and
-reduce the flicker that is often present in animations). Super resolution is only
-applied on the output video (= not visible in Preview mode)
-- Zoom: render the frame and the animation at a higher resolution (2, 3 or 4 times
-larger). You may have to increase the points size beforehand.</string>
+            <string>
+                          - Super resolution: render the frame at a higher resolution (2, 3 or 4 times larger)
+                          and then shrink it back down to size (this makes some noisy pixels drop off and
+                          reduce the flicker that is often present in animations). Super resolution is only
+                          applied on the output video (= not visible in Preview mode)
+                          - Zoom: render the frame and the animation at a higher resolution (2, 3 or 4 times
+                          larger). You may have to increase the points size beforehand.
+                        </string>
            </property>
            <property name="sizeAdjustPolicy">
             <enum>QComboBox::AdjustToContents</enum>
@@ -302,6 +698,85 @@ larger). You may have to increase the points size beforehand.</string>
            </property>
            <property name="maximum">
             <number>4</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="staticSizeModeComboBox">
+           <property name="toolTip">
+            <string>List of static resolution</string>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QComboBox::AdjustToContents</enum>
+           </property>
+           <item>
+            <property name="text">
+             <string>1920x1080</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3840x2160</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>5760x3240</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>7680x4320</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>8192x4608</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>9600x5400</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11520x6480</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>13440x7560</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>15360x8640</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16320x9180</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16384x9216</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="staticSizeCheckBox">
+           <property name="text">
+            <string>Static size</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="ratioCheckBox">
+           <property name="text">
+            <string>Ratio 1:1</string>
            </property>
           </widget>
          </item>
@@ -337,6 +812,27 @@ larger). You may have to increase the points size beforehand.</string>
          <widget class="QToolButton" name="browseButton">
           <property name="text">
            <string notr="true">...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_12">
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Watermark file</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="watermarkFileLineEdit"/>
+        </item>
+        <item>
+         <widget class="QToolButton" name="watermarkButton">
+          <property name="text">
+           <string>...</string>
           </property>
          </widget>
         </item>

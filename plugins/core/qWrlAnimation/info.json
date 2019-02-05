@@ -1,0 +1,24 @@
+{
+	"type" : "Standard",
+	"core" : true,
+	"name" : "Wrl Animation",
+	"icon" : ":/CC/plugin/qWrlAnimation/images/icon.png",
+	"description": "Creates png sequence from wrl files.",
+	"authors" : [
+		{
+			"name" : "PSNC"
+		}
+	],
+	"maintainers" : [
+		{
+			"name" : "Maciej Jaśkiewicz",
+			"email" : "mjaskiewicz@man.poznan.pl"
+		}
+	],
+	"references" : [
+		
+		{
+			"text" : "Will be added soon"
+		}
+	]
+}

@@ -15,6 +15,17 @@
 //#                                                                        #
 //##########################################################################
 
+//##########################################################################
+//#                                                                        #
+//#      Added:                                                            #
+//#     -Better interpolation, based on splines.                           #
+//#     -Static size without scaling window(up to 16k).                    #
+//#     -Preview/Export frames progress by processed frames count.         #
+//#                                                                        #
+//#             COPYRIGHT: Maciej Jaskiewicz, PSNC, 2018                   #
+//#                                                                        #
+//##########################################################################
+
 #ifndef CC_ANIMATION_DLG_HEADER
 #define CC_ANIMATION_DLG_HEADER
 
@@ -50,8 +61,18 @@ protected slots:
 	void onTotalTimeChanged(double);
 	void onStepTimeChanged(double);
 	void onLoopToggled(bool);
+	void onInterpolateToggled(bool);
+	void onParametrizeToggled(bool);
+	void onRenderAllChanged(bool);
+	void onRenderFromChanged(int);
+	void onRenderToChanged(int);
+
 	void onCurrentStepChanged(int);
 	void onBrowseButtonClicked();
+	void onWatermarkButtonClicked();
+
+
+	void onStaticSizeToggled(bool);
 
 	void preview();
 	void renderAnimation() { render(false); }
@@ -91,6 +112,11 @@ protected: //members
 	std::vector<Step> m_videoSteps;
 
 	ccGLWindow* m_view3d;
+private:
+	// method changing given angles to make least distance
+	// between them
+	void smoothAngles(std::vector<double>& angles /* in|out*/);
 };
+
 
 #endif

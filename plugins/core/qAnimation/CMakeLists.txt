@@ -12,13 +12,34 @@ if (INSTALL_QANIMATION_PLUGIN)
 		add_subdirectory( src/QTFFmpegWrapper )
 		include_directories( ${QTFFMPEG_LIB_SOURCE_DIR} )
 	endif()
+	add_subdirectory( src/Splinter )
 
 	include_directories( src )
 
 	add_subdirectory( src )
 	add_subdirectory( ui )
 
+	include_directories( src )
+
+
+	if ( NOT SPLINTER_INCLUDE_DIR )
+		message( SEND_ERROR "No Splinter include dir specified (SPLINTER_INCLUDE_DIR)" )
+	else()
+		include_directories( ${SPLINTER_INCLUDE_DIR} )
+	endif()
+
+
+	if( SPLINTER_LIBRARY_DIR )
+		link_directories(${SPLINTER_LIBRARY_DIR} )
+	else()
+
+	message( SEND_ERROR "No Splinter library dir specified (SPLINTER_LIBRARY_DIR)" )
+
+	endif()
+
 	include( ../../CMakePluginTpl.cmake )
+
+	target_link_libraries( ${PROJECT_NAME} SPLINTER_LIB )
 
 	if (WITH_FFMPEG_SUPPORT)
 		target_link_libraries( ${PROJECT_NAME} QTFFMPEG_LIB )
