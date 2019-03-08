@@ -452,6 +452,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QCheckBox" name="ratioCheckBox">
+       <property name="text">
+        <string>Ratio 1:1</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>

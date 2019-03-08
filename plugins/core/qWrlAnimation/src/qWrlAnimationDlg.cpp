@@ -304,8 +304,16 @@ void qWrlAnimationDlg::render(bool asSeparateFrames)
 		applyViewport(&outParams);
 
 		QImage image;
-		QSize customSize(1920, 1080);
-		m_view3d->resize(customSize);
+		if (ratioCheckBox->isChecked())
+		{
+			QSize customSize(1920, 1920);
+			m_view3d->resize(customSize);
+		}
+		else
+		{
+			QSize customSize(1920, 1080);
+			m_view3d->resize(customSize);
+		}
 		QApplication::processEvents();
 
 		switch (sizeFromComboBox)
